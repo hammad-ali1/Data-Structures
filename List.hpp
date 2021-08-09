@@ -9,6 +9,7 @@
 // to include this file, we won't need to explicitly include List.hpp in
 // the main.cpp file.
 #include "List.h"
+#include <iostream>
 
 template <typename T>
 const T & List<T>::operator[](unsigned index) {
@@ -54,3 +55,13 @@ typename List<T>::ListNode *List<T>::_find(const T & data) {
 
   return nullptr;  
 }
+
+template <typename T>
+void List<T>::print(){
+      auto cur = this->head_;
+      while( cur ){
+        std::cout << cur->data << "->";
+        cur = cur->next;
+    }
+    std::cout << "nullptr";
+  }

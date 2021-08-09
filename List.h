@@ -13,13 +13,14 @@
 // https://stackoverflow.com/questions/13094898/do-class-functions-variables-have-to-be-declared-before-being-used
 
 #pragma once
-
+#include<iostream>
 template <typename T>
 class List {
   public:
     const T & operator[](unsigned index);
     void insertAtFront(const T & data);
-
+    void print();
+   
     // We define this constructor to make sure that head_ is null-initialized.
     List() : head_(nullptr) { }
 
