@@ -10,6 +10,7 @@
 // the main.cpp file.
 #include "List.h"
 #include <iostream>
+#include <stack>
 
 template <typename T>
 const T & List<T>::operator[](unsigned index) {
@@ -65,3 +66,27 @@ void List<T>::print(){
     }
     std::cout << "nullptr";
   }
+
+template <typename T>
+void List<T>::reverse(){
+      auto cur = head_;
+      std::stack<typename List<T>::ListNode*> s;
+      while(cur != nullptr){
+        s.push(cur);
+        cur = cur->next;
+      }
+      if(s.empty()){
+        head_ == nullptr;
+        return;
+      }else{
+        head_ = s.top();
+        s.pop();
+        cur = head_;
+      }
+      while(!s.empty()){
+        cur->next = s.top();
+        s.pop();
+        cur = cur->next;
+      }
+      cur->next = nullptr;
+  }  

@@ -20,7 +20,8 @@ class List {
     const T & operator[](unsigned index);
     void insertAtFront(const T & data);
     void print();
-   
+    void reverse();
+    
     // We define this constructor to make sure that head_ is null-initialized.
     List() : head_(nullptr) { }
 
