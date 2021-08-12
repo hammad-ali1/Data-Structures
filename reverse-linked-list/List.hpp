@@ -76,7 +76,7 @@ void List<T>::reverse(){
         cur = cur->next;
       }
       if(s.empty()){
-        head_ == nullptr;
+        head_ = nullptr;
         return;
       }else{
         head_ = s.top();

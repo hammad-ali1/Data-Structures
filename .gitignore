@@ -1,4 +1,6 @@
+/./.gitignore
 /reverse-linked-list/.vscode
+/reverse-linked-list/.objs
 main 
 main.exe
 README.md
